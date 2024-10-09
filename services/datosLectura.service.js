@@ -26,7 +26,6 @@ class DatosLecturaService {
         await DatosLectura.destroy();
         return {deleted: true};
     }
-
 }
 
 

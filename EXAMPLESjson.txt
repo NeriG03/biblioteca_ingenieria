@@ -1,0 +1,17 @@
+datosLectura:
+{
+  "nombre": "100 anios de soledad",
+  "autor": "Gabriel Garcia Marquez",
+  "editorial": "Col. Editoriales",
+  "yearPublicacion": "2005-12-29",
+  "numTomo": 1,
+  "paisPublicacion": "Mexico"
+}
+
+articuloCientifico:
+{
+  "genero": "Fisica",
+  "DatosLecturaId": 2
+}
+
+

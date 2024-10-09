@@ -1,10 +1,18 @@
-import {DatosLectura, DatosLecturaSchema} from "./datosLectura.model.js";
 import { Sequelize } from "sequelize";
 import config from "../../config/config.js";
+import {DatosLectura, DatosLecturaSchema} from "./datosLectura.model.js";
+import { ArticuloCientifico, ArticuloCientificoSchema } from "./articuloCientifico.model.js";
+
 
 
 function setUpModels(sequelize){
+    //Inicializar los modelos/tablas
     DatosLectura.init(DatosLecturaSchema, DatosLectura.config(sequelize));
+    ArticuloCientifico.init(ArticuloCientificoSchema, ArticuloCientifico.config(sequelize));
+    // Relaciones
+    DatosLectura.hasOne(ArticuloCientifico);
+    ArticuloCientifico.belongsTo(DatosLectura);
+
 }
 
 const sequelize = new Sequelize(
@@ -31,5 +39,6 @@ setUpModels(sequelize);
 
 export {
     setUpModels,
-    DatosLectura
+    DatosLectura,
+    ArticuloCientifico
 }
