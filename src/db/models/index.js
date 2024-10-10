@@ -4,6 +4,7 @@ import {DatosLectura, DatosLecturaSchema} from "./datosLectura.model.js";
 import { ArticuloCientifico, ArticuloCientificoSchema } from "./articuloCientifico.model.js";
 import { Revista, RevistaSchema } from "./revista.model.js"
 import { Libro, LibroSchema } from "./libro.model.js";
+import { Personal, PersonalSchema } from "./personal.model.js";
 
 
 
@@ -13,8 +14,10 @@ function setUpModels(sequelize){
     ArticuloCientifico.init(ArticuloCientificoSchema, ArticuloCientifico.config(sequelize));
     Revista.init(RevistaSchema, Revista.config(sequelize));
     Libro.init(LibroSchema, Libro.config(sequelize));
-    
-    // Relaciones
+    Personal.init(PersonalSchema, Personal.config(sequelize));
+
+
+    //Relaciones
     DatosLectura.hasOne(ArticuloCientifico);
     ArticuloCientifico.belongsTo(DatosLectura);
 
@@ -53,5 +56,6 @@ export {
     DatosLectura,
     ArticuloCientifico,
     Revista,
-    Libro
+    Libro,
+    Personal
 }
