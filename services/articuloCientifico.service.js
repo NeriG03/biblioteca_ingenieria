@@ -27,8 +27,8 @@ class ArticuloCientificoService {
     }
 
     async delete(id){
-        const ArticuloCientifico = await ArticuloCientifico.findByPk(id);
-        await ArticuloCientifico.destroy();
+        const articuloCientifico = await ArticuloCientifico.findByPk(id);
+        await articuloCientifico.destroy();
         return {deleted: true};
     }
 }

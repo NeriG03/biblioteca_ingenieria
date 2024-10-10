@@ -31,6 +31,4 @@ const ArticuloCientificoSchema = {
 
 
 
-
-
 export {ArticuloCientifico, ArticuloCientificoSchema};
