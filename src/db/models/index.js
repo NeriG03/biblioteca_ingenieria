@@ -5,6 +5,8 @@ import { ArticuloCientifico, ArticuloCientificoSchema } from "./articuloCientifi
 import { Revista, RevistaSchema } from "./revista.model.js"
 import { Libro, LibroSchema } from "./libro.model.js";
 import { Personal, PersonalSchema } from "./personal.model.js";
+import { Limpieza, LimpiezaSchema } from "./limpieza.model.js";
+import { Recepcionista, RecepcionistaSchema } from "./recepcionista.model.js";
 
 
 
@@ -15,6 +17,8 @@ function setUpModels(sequelize){
     Revista.init(RevistaSchema, Revista.config(sequelize));
     Libro.init(LibroSchema, Libro.config(sequelize));
     Personal.init(PersonalSchema, Personal.config(sequelize));
+    Limpieza.init(LimpiezaSchema, Limpieza.config(sequelize));
+    Recepcionista.init(RecepcionistaSchema, Recepcionista.config(sequelize));
 
 
     //Relaciones
@@ -26,6 +30,12 @@ function setUpModels(sequelize){
 
     DatosLectura.hasOne(Libro);
     Libro.belongsTo(DatosLectura);
+
+    Personal.hasOne(Limpieza);
+    Limpieza.belongsTo(Personal);
+
+    Personal.hasOne(Recepcionista);
+    Recepcionista.belongsTo(Personal);
 
 }
 
@@ -57,5 +67,7 @@ export {
     ArticuloCientifico,
     Revista,
     Libro,
-    Personal
+    Personal,
+    Limpieza,
+    Recepcionista
 }

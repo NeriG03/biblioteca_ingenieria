@@ -4,6 +4,8 @@ import articuloCientificoRouter from "../routes/articuloCientifico.routes.js";
 import revistaRouter from "../routes/revista.routes.js";
 import libroRouter from "../routes/libro.routes.js";
 import personalRouter from "../routes/personal.routes.js";
+import limpiezaRouter from "./limpieza.routes.js"
+import recepcionistaRouter from "./recepcionista.routes.js"
 
 function routes(app){
     const router = express.Router();
@@ -13,6 +15,8 @@ function routes(app){
     router.use('',revistaRouter);
     router.use('',libroRouter);
     router.use('',personalRouter);
+    router.use('',limpiezaRouter);
+    router.use('',recepcionistaRouter);
 }
 
 
