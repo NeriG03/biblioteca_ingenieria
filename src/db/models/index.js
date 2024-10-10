@@ -9,6 +9,7 @@ import { Limpieza, LimpiezaSchema } from "./limpieza.model.js";
 import { Recepcionista, RecepcionistaSchema } from "./recepcionista.model.js";
 import { Ayudante, AyudanteSchema } from "./ayudante.model.js";
 import { Administrador, AdministradorSchema } from "./administrador.model.js";
+import { Cliente, ClienteSchema } from "./cliente.model.js";
 
 
 
@@ -23,6 +24,8 @@ function setUpModels(sequelize){
     Recepcionista.init(RecepcionistaSchema, Recepcionista.config(sequelize));
     Ayudante.init(AyudanteSchema, Ayudante.config(sequelize));
     Administrador.init(AdministradorSchema, Administrador.config(sequelize));
+    Cliente.init(ClienteSchema, Cliente.config(sequelize));
+
 
 
 
@@ -84,5 +87,6 @@ export {
     Limpieza,
     Recepcionista,
     Ayudante,
-    Administrador
+    Administrador,
+    Cliente
 }

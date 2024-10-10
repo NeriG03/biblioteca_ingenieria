@@ -1,19 +1,19 @@
-import { Model, DataTypes } from 'sequelize';
+import { Model, DataTypes } from "sequelize";
 
-const TABLE_NAME = 'personal';
+const TABLE_NAME = "cliente";
 
-class Personal extends Model {
+class Cliente extends Model {
     static config(sequelize) {
         return {
-            sequelize,
-            tableName: TABLE_NAME,
-            modelName: 'Personal',
-            timestamps: true
-        }
+        sequelize,
+        tableName: TABLE_NAME,
+        modelName: "Cliente",
+        timestamps: true,
+        };
     }
 }
 
-const PersonalSchema = {
+const ClienteSchema = {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -35,38 +35,25 @@ const PersonalSchema = {
         allowNull: false,
         field: 'apellido_mat'
     },
-    telefono: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        field: 'telefono'
-    },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
         field: 'email'
     },
+    telefono: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        field: 'telefono'
+    },
     direccion: {
         type: DataTypes.STRING,
         allowNull: false,
         field: 'direccion'
-    },
-    horaEntrada: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        field: 'hora_entrada'
-    },
-    horaSalida: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        field: 'hora_salida'
-    },
-    salario: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        field: 'salario'
-    },
+    }
 }
 
+export { Cliente, ClienteSchema };
 
-export { Personal, PersonalSchema };
+
+
 
