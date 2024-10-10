@@ -1,5 +1,5 @@
 import express from "express";
-import articuloCientificoController from "../controllers/articuloCientifico.constrollers.js";
+import articuloCientificoController from "../controllers/articuloCientifico.controllers.js";
 
 const router = express.Router();
 
