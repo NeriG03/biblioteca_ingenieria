@@ -7,6 +7,7 @@ import { Libro, LibroSchema } from "./libro.model.js";
 import { Personal, PersonalSchema } from "./personal.model.js";
 import { Limpieza, LimpiezaSchema } from "./limpieza.model.js";
 import { Recepcionista, RecepcionistaSchema } from "./recepcionista.model.js";
+import { Ayudante, AyudanteSchema } from "./ayudante.model.js";
 
 
 
@@ -19,6 +20,7 @@ function setUpModels(sequelize){
     Personal.init(PersonalSchema, Personal.config(sequelize));
     Limpieza.init(LimpiezaSchema, Limpieza.config(sequelize));
     Recepcionista.init(RecepcionistaSchema, Recepcionista.config(sequelize));
+    Ayudante.init(AyudanteSchema, Ayudante.config(sequelize));
 
 
     //Relaciones
@@ -36,6 +38,9 @@ function setUpModels(sequelize){
 
     Personal.hasOne(Recepcionista);
     Recepcionista.belongsTo(Personal);
+
+    Personal.hasOne(Ayudante);
+    Ayudante.belongsTo(Personal);
 
 }
 
@@ -69,5 +74,6 @@ export {
     Libro,
     Personal,
     Limpieza,
-    Recepcionista
+    Recepcionista,
+    Ayudante
 }

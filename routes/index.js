@@ -6,6 +6,7 @@ import libroRouter from "../routes/libro.routes.js";
 import personalRouter from "../routes/personal.routes.js";
 import limpiezaRouter from "./limpieza.routes.js"
 import recepcionistaRouter from "./recepcionista.routes.js"
+import ayudanteRouter from "./ayudante.routes.js"
 
 function routes(app){
     const router = express.Router();
@@ -17,6 +18,7 @@ function routes(app){
     router.use('',personalRouter);
     router.use('',limpiezaRouter);
     router.use('',recepcionistaRouter);
+    router.use('',ayudanteRouter);
 }
 
 
