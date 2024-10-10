@@ -8,6 +8,7 @@ import { Personal, PersonalSchema } from "./personal.model.js";
 import { Limpieza, LimpiezaSchema } from "./limpieza.model.js";
 import { Recepcionista, RecepcionistaSchema } from "./recepcionista.model.js";
 import { Ayudante, AyudanteSchema } from "./ayudante.model.js";
+import { Administrador, AdministradorSchema } from "./administrador.model.js";
 
 
 
@@ -21,6 +22,9 @@ function setUpModels(sequelize){
     Limpieza.init(LimpiezaSchema, Limpieza.config(sequelize));
     Recepcionista.init(RecepcionistaSchema, Recepcionista.config(sequelize));
     Ayudante.init(AyudanteSchema, Ayudante.config(sequelize));
+    Administrador.init(AdministradorSchema, Administrador.config(sequelize));
+
+
 
 
     //Relaciones
@@ -41,6 +45,10 @@ function setUpModels(sequelize){
 
     Personal.hasOne(Ayudante);
     Ayudante.belongsTo(Personal);
+
+    Personal.hasOne(Administrador);
+    Administrador.belongsTo(Personal);
+
 
 }
 
@@ -75,5 +83,6 @@ export {
     Personal,
     Limpieza,
     Recepcionista,
-    Ayudante
+    Ayudante,
+    Administrador
 }
