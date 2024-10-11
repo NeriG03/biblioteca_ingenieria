@@ -1,36 +1,36 @@
-import { Limpieza, Personal } from "../src/db/models/index.js";
+import { Recepcionista, Personal } from "../src/db/models/index.js";
 
-class LimpiezaService {
+class RecepcionistaService {
     constructor(){}
 
     async create(data){
-        return await Limpieza.create(data);
+        return await Recepcionista.create(data);
     }
 
     async getAll(){
-        return await Limpieza.findAll({
+        return await Recepcionista.findAll({
             include: Personal
             
         });
     }
 
     async getById(id){
-        return await Limpieza.findByPk(id,{
+        return await Recepcionista.findByPk(id,{
             include: Personal
         });
     }
 
     async update(id, data){
-        const limpieza = await Limpieza.findByPk(id);
-        return await limpieza.update(data);
+        const recepcionista = await Recepcionista.findByPk(id);
+        return await recepcionista.update(data);
     }
 
     async delete(id){
-        const limpieza = await Limpieza.findByPk(id);
-        await limpieza.destroy();
+        const recepcionistaService = await Recepcionista.findByPk(id);
+        await recepcionistaService.destroy();
         return {deleted: true};
     }
 }
 
 
-export default LimpiezaService;
+export default RecepcionistaService;

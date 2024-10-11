@@ -25,12 +25,12 @@ const PersonalSchema = {
         allowNull: false,
         field: 'nombre'
     },
-    apellidoPat: {
+    apellido_pat: {
         type: DataTypes.STRING,
         allowNull: false,
         field: 'apellido_pat'
     },
-    apellidoMat: {
+    apellido_mat: {
         type: DataTypes.STRING,
         allowNull: false,
         field: 'apellido_mat'
@@ -50,12 +50,12 @@ const PersonalSchema = {
         allowNull: false,
         field: 'direccion'
     },
-    horaEntrada: {
+    hora_entrada: {
         type: DataTypes.STRING,
         allowNull: false,
         field: 'hora_entrada'
     },
-    horaSalida: {
+    hora_salida: {
         type: DataTypes.STRING,
         allowNull: false,
         field: 'hora_salida'

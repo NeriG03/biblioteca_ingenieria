@@ -1,4 +1,4 @@
-import { Multa, Reservacion } from "../src/db/models/index.js";
+import { Multa, Reservacion, Cliente, Recepcionista, Personal, DatosLectura} from "../src/db/models/index.js";
 
 class MultaService {
     async create(multa) {
@@ -7,13 +7,45 @@ class MultaService {
 
     async getAll() {
         return Multa.findAll({
-            include: [ Reservacion ]
+            include: [ 
+                {
+                    model: Reservacion,
+                    include: [
+                        {
+                            model: Cliente
+                        },
+                        {
+                            model: Recepcionista,
+                            include: [Personal]
+                        },
+                        {
+                            model: DatosLectura
+                        }
+                    ]
+                } 
+            ]
         });
     }
 
     async getById(id) {
         return Multa.findByPk(id,{
-            include: [ Reservacion ]
+            include: [ 
+                {
+                    model: Reservacion,
+                    include: [
+                        {
+                            model: Cliente
+                        },
+                        {
+                            model: Recepcionista,
+                            include: [Personal]
+                        },
+                        {
+                            model: DatosLectura
+                        }
+                    ]
+                } 
+            ]
         });
     }
 

@@ -6,13 +6,13 @@ const multaService = new MultaService();
 const post = async (req, res) => {
     try{
         const reservacionService = new ReservacionService();
-        const reservacion = await reservacionService.findById(req.body.reservacionId);
-        if (reservacion || reservacion.estadoMulta) {
+        const reservacion = await reservacionService.getById(req.body.ReservacionId);
+        if (reservacion || reservacion.estado) {
             const multa = await multaService.create(req.body);
             res.status(201).json(multa);
         }
     } catch (error){
-        res.status(400).json({message: error.message});
+        res.status(400).json({message: "La reservación no existe o no es apta para una multa"});
     }
 }
 

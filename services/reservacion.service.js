@@ -1,14 +1,25 @@
-import { Cliente, Reservacion , Recepcionista, DatosLectura} from "../src/db/models/index.js";
+import { Cliente, Reservacion , Recepcionista, DatosLectura, Personal} from "../src/db/models/index.js";
 
 
 class ReservacionService {
     async create(reservacion) {
         return Reservacion.create(reservacion);
     }
-
+    
     async getAll() {
         return Reservacion.findAll({
-            include: [ Cliente, Recepcionista, DatosLectura ]
+            include: [
+                {
+                    model: Cliente
+                },
+                {
+                    model: Recepcionista,
+                    include: [Personal]
+                },
+                {
+                    model: DatosLectura
+                }
+            ]
         });
     }
 

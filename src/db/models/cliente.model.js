@@ -25,12 +25,12 @@ const ClienteSchema = {
         allowNull: false,
         field: 'nombre'
     },
-    apellidoPat: {
+    apellido_pat: {
         type: DataTypes.STRING,
         allowNull: false,
         field: 'apellido_pat'
     },
-    apellidoMat: {
+    apellido_mat: {
         type: DataTypes.STRING,
         allowNull: false,
         field: 'apellido_mat'

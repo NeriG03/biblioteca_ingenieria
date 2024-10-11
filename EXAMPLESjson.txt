@@ -1,17 +1,141 @@
 datosLectura:
 {
-  "nombre": "100 anios de soledad",
-  "autor": "Gabriel Garcia Marquez",
-  "editorial": "Col. Editoriales",
-  "yearPublicacion": "2005-12-29",
+  "nombre": "Fisica Newtoniana",
+  "autor": "Newton",
+  "editorial": "Editorial Para la fisica",
+  "yearPublicacion": "1500-12-29",
   "numTomo": 1,
+  "paisPublicacion": "Alemania"
+}
+
+{
+  "nombre": "100 años de Soledad",
+  "autor": "Garcia Marquez",
+  "editorial": "Editorial para novelas",
+  "yearPublicacion": "2000-12-29",
+  "numTomo": 1,
+  "paisPublicacion": "Colombia"
+}
+
+{
+  "nombre": "Muy Interesante",
+  "autor": "Un wey random",
+  "editorial": "Editorial para revistas",
+  "yearPublicacion": "2006-12-29",
+  "numTomo": 2,
   "paisPublicacion": "Mexico"
 }
 
 articuloCientifico:
 {
   "genero": "Fisica",
+  "DatosLecturaId": 1
+}
+
+libro:
+{
+  "genero": "novela",
   "DatosLecturaId": 2
 }
 
+revista:
+{
+  "genero": "Divulgacion Cientifica",
+  "DatosLecturaId": 3
+}
 
+personal:
+{
+  "nombre": "Diego",
+  "apellido_pat": "Hernandez",
+  "apellido_mat": "Cardena",
+  "telefono": "1234567",
+  "email": "diegoPapu@gmail.com",
+  "direccion": "Calle de Diego",
+  "hora_entrada": "9:00 am",
+  "hora_salida": "2:00 am",
+  "salario": 10,000
+}
+
+{
+  "nombre": "Vicente",
+  "apellido_pat": "Barrera",
+  "apellido_mat": "Colin",
+  "telefono": "7654321",
+  "email": "vicZero@gmail.com",
+  "direccion": "Calle de Vicnete",
+  "hora_entrada": "8:00 am",
+  "hora_salida": "3:00 am",
+  "salario": 15,000
+}
+
+{
+  "nombre": "Joshua",
+  "apellido_pat": "Martinez",
+  "apellido_mat": "Israel",
+  "telefono": "112299",
+  "email": "chochuaz@gmail.com",
+  "direccion": "Calle de Joshua",
+  "hora_entrada": "7:00 am",
+  "hora_salida": "2:00 am",
+  "salario": 11,000
+}
+
+{
+  "nombre": "Papu",
+  "apellido_pat": "Limpieza",
+  "apellido_mat": "Mamut",
+  "telefono": "12345",
+  "email": "PapuLimpieza@gmail.com",
+  "direccion": "Calle de PapuLimpieza",
+  "hora_entrada": "10:00 am",
+  "hora_salida": "5:00 am",
+  "salario": 11,500
+}
+
+Limpieza:
+{
+  "PersonalId": 5
+}
+
+Administrador:
+{
+  "PersonalId": 2
+}
+
+Recepcionista:
+{
+  "PersonalId": 3
+}
+
+Ayudante:
+{
+  "PersonalId": 4
+}
+
+Cliente:
+{
+  "nombre": "Uziel",
+  "apellido_pat": "Lopez",
+  "apellido_mat": "Hernandez",
+  "email": "UzielyFernando@gmail.com",
+  "telefono": "123409",
+  "direccion": "Calle de Uziel"
+}
+
+Reservacion:
+{
+  "fecha_inicio": "2024-01-15",
+  "fecha_fin": "2024-01-25",
+  "estado": false,
+  "DatosLecturaId": 2,
+  "ClienteId": 1,
+  "RecepcionistaId": 1
+}
+
+Multa
+{
+  "diasRetraso": 3,
+  "monto": 20,
+  "ReservacionId": 1
+}

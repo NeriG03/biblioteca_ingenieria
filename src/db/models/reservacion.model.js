@@ -20,17 +20,17 @@ const ReservacionSchema = {
         autoIncrement: true,
         allowNull: false
     },
-    fechaInicio: {
+    fecha_inicio: {
         type: DataTypes.DATE,
         allowNull: false,
         field: 'fecha_inicio'
     },
-    fechaFin: {
+    fecha_fin: {
         type: DataTypes.DATE,
         allowNull: false,
         field: 'fecha_fin'
     },
-    estadoMulta: {
+    estado: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         field: 'estado'

@@ -67,9 +67,6 @@ function setUpModels(sequelize){
     Recepcionista.hasMany(Reservacion);
     Reservacion.belongsTo(Recepcionista);
 
-   /*  DatosLectura.hasMany(Reservacion);
-    Reservacion.belongsTo(DatosLectura); */
-
     Reservacion.hasOne(Multa);
     Multa.belongsTo(Reservacion);
 
