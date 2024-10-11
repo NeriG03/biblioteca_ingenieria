@@ -30,7 +30,7 @@ const ReservacionSchema = {
         allowNull: false,
         field: 'fecha_fin'
     },
-    estado: {
+    estadoMulta: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         field: 'estado'

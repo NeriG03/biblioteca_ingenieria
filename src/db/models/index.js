@@ -11,6 +11,7 @@ import { Ayudante, AyudanteSchema } from "./ayudante.model.js";
 import { Administrador, AdministradorSchema } from "./administrador.model.js";
 import { Cliente, ClienteSchema } from "./cliente.model.js";
 import { Reservacion, ReservacionSchema } from "./reservacion.model.js";
+import { Multa, MultaSchema } from "./multa.models.js";
 
 
 
@@ -27,6 +28,7 @@ function setUpModels(sequelize){
     Administrador.init(AdministradorSchema, Administrador.config(sequelize));
     Cliente.init(ClienteSchema, Cliente.config(sequelize));
     Reservacion.init(ReservacionSchema, Reservacion.config(sequelize));
+    Multa.init(MultaSchema, Multa.config(sequelize));
 
 
 
@@ -68,7 +70,8 @@ function setUpModels(sequelize){
    /*  DatosLectura.hasMany(Reservacion);
     Reservacion.belongsTo(DatosLectura); */
 
-
+    Reservacion.hasOne(Multa);
+    Multa.belongsTo(Reservacion);
 
 
 }
@@ -107,5 +110,6 @@ export {
     Ayudante,
     Administrador,
     Cliente,
-    Reservacion
+    Reservacion,
+    Multa
 }
