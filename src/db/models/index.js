@@ -10,6 +10,7 @@ import { Recepcionista, RecepcionistaSchema } from "./recepcionista.model.js";
 import { Ayudante, AyudanteSchema } from "./ayudante.model.js";
 import { Administrador, AdministradorSchema } from "./administrador.model.js";
 import { Cliente, ClienteSchema } from "./cliente.model.js";
+import { Reservacion, ReservacionSchema } from "./reservacion.model.js";
 
 
 
@@ -25,6 +26,7 @@ function setUpModels(sequelize){
     Ayudante.init(AyudanteSchema, Ayudante.config(sequelize));
     Administrador.init(AdministradorSchema, Administrador.config(sequelize));
     Cliente.init(ClienteSchema, Cliente.config(sequelize));
+    Reservacion.init(ReservacionSchema, Reservacion.config(sequelize));
 
 
 
@@ -36,6 +38,11 @@ function setUpModels(sequelize){
 
     DatosLectura.hasOne(Revista);
     Revista.belongsTo(DatosLectura);
+
+
+    DatosLectura.hasMany(Reservacion);
+    Reservacion.belongsTo(DatosLectura);
+
 
     DatosLectura.hasOne(Libro);
     Libro.belongsTo(DatosLectura);
@@ -51,6 +58,17 @@ function setUpModels(sequelize){
 
     Personal.hasOne(Administrador);
     Administrador.belongsTo(Personal);
+
+    Cliente.hasMany(Reservacion);
+    Reservacion.belongsTo(Cliente);
+
+    Recepcionista.hasMany(Reservacion);
+    Reservacion.belongsTo(Recepcionista);
+
+   /*  DatosLectura.hasMany(Reservacion);
+    Reservacion.belongsTo(DatosLectura); */
+
+
 
 
 }
@@ -88,5 +106,6 @@ export {
     Recepcionista,
     Ayudante,
     Administrador,
-    Cliente
+    Cliente,
+    Reservacion
 }
