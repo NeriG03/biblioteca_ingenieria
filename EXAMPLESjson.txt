@@ -133,7 +133,7 @@ Reservacion:
   "RecepcionistaId": 1
 }
 
-Multa
+Multa (solo si estado en reservacion es true)
 {
   "diasRetraso": 3,
   "monto": 20,
