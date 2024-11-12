@@ -73,12 +73,7 @@ function setUpModels(sequelize){
 
 }
 
-const sequelize = new Sequelize(
-    config.dbName, 
-    config.dbUser, 
-    config.dbPassword, {
-    host: config.dbHost,
-    port: config.dbPort,
+const sequelize = new Sequelize(config.dbUrl, {
     dialect: 'postgres'
 });
 
