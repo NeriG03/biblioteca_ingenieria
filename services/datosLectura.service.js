@@ -1,33 +1,36 @@
-import {DatosLectura} from "../src/db/models/index.js";
-
+import { DatosLectura } from "../src/db/models/index.js";
 
 class DatosLecturaService {
-    constructor(){}
+    constructor() {}
 
-    async create(data){
+    async create(data) {
         return await DatosLectura.create(data);
     }
 
-    async getAll(){
+    async getAll() {
         return await DatosLectura.findAll();
     }
 
-    async getById(id){
+    async getById(id) {
         return await DatosLectura.findByPk(id);
     }
 
-    async update(id, data){
-        const DatosLectura = await DatosLectura.findByPk(id);
-        return await DatosLectura.update(data);
+    async update(id, data) {
+        const lectura = await DatosLectura.findByPk(id);
+        if (!lectura) {
+            throw new Error('Lectura not found');
+        }
+        return await lectura.update(data);
     }
 
-    async delete(id){
-        const DatosLectura = await DatosLectura.findByPk(id);
-        await DatosLectura.destroy();
-        return {deleted: true};
+    async delete(id) {
+        const lectura = await DatosLectura.findByPk(id);
+        if (!lectura) {
+            throw new Error('Lectura not found');
+        }
+        await lectura.destroy();
+        return { deleted: true };
     }
 }
-
-
 
 export default DatosLecturaService;
