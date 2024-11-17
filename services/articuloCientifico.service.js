@@ -22,8 +22,8 @@ class ArticuloCientificoService {
     }
 
     async update(id, data){
-        const ArticuloCientifico = await ArticuloCientifico.findByPk(id);
-        return await ArticuloCientifico.update(data);
+        const articuloCientifico = await ArticuloCientifico.findByPk(id);
+        return await articuloCientifico.update(data);
     }
 
     async delete(id){
